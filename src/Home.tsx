@@ -1,4 +1,5 @@
 import { h, tw } from "../deps.ts";
+import { Footer } from "./Footer.tsx";
 import { Header } from "./Header.tsx";
 
 export function Home(props: { latest: string }) {
@@ -26,6 +27,7 @@ export function Home(props: { latest: string }) {
           View Data for Latest Commit
         </a>
       </div>
+      <Footer />
     </div>
   );
 }

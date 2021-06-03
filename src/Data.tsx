@@ -1,5 +1,6 @@
 import { Fragment, h, tw } from "../deps.ts";
 import { Test, TestCase } from "./data.ts";
+import { Footer } from "./Footer.tsx";
 import { Header } from "./Header.tsx";
 
 interface Folder {
@@ -100,6 +101,7 @@ export function Data(
             )}
           </>}
       </div>
+      <Footer />
     </div>
   );
 }
