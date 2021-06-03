@@ -13,14 +13,17 @@ export function Home(props: { latest: string }) {
         >
           Web Platform Tests
         </a>{" "}
-        that are run for Deno.
+        that are run in Deno CI. The WPT suite is shared between all browser
+        vendors (Chrome, Firefox, Safari), and is used to check for
+        compatibility between engines. It ensures that web APIs behave the same
+        across different browsers.
       </p>
       <div class={tw`mt-4`}>
         <a
           href={`/${props.latest}`}
           class={tw`text-blue-500 hover:underline`}
         >
-          View Latest Commit
+          View Data for Latest Commit
         </a>
       </div>
     </div>

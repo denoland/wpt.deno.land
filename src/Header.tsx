@@ -10,7 +10,7 @@ export function Header() {
       <h1 class={tw`h-10 text-3xl font-bold`}>
         <a href="/">Deno</a>
       </h1>
-      <h2 class={tw`h-6 text-xl font-semibold`}>Web Platform Compat Data</h2>
+      <h2 class={tw`h-6 text-xl font-semibold`}>Web Platform Compat</h2>
     </div>
   );
 }
