@@ -172,18 +172,21 @@ function TestCaseTile(props: { case: TestCase }) {
 
 function Ratio(props: { passed: number; total: number }) {
   const { passed, total } = props;
+  const none = passed === 0 && total === 0;
+  const percentPassed = none ? 0 : passed / total * 100;
   return (
     <>
-      <span class={tw`font-bold`}>{passed} / {total}</span>{" "}
-      tests pass ({(passed / total * 100).toFixed(1)}%)
+      <span class={tw`font-bold`}>{none ? "no" : `${passed} / ${total}`}</span>
+      {" "}
+      tests pass ({percentPassed}%) {none && "(suite crashed)"}
       <div class={tw`flex`}>
         <div
           class={tw`h-1 mt-1 w-full bg-green-300`}
-          style={{ width: `${passed / total * 100}%` }}
+          style={{ width: `${percentPassed}%` }}
         />
         <div
           class={tw`h-1 mt-1 w-full bg-red-300`}
-          style={{ width: `${100 - (passed / total * 100)}%` }}
+          style={{ width: `${100 - percentPassed}%` }}
         />
       </div>
     </>
