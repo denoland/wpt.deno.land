@@ -178,7 +178,7 @@ function Ratio(props: { passed: number; total: number }) {
     <>
       <span class={tw`font-bold`}>{none ? "no" : `${passed} / ${total}`}</span>
       {" "}
-      tests pass ({percentPassed}%) {none && "(suite crashed)"}
+      tests pass ({percentPassed.toFixed(1)}%) {none && "(suite crashed)"}
       <div class={tw`flex`}>
         <div
           class={tw`h-1 mt-1 w-full bg-green-300`}
