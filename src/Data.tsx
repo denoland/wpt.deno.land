@@ -72,8 +72,7 @@ export function Data(
           class={tw`text-blue-500 hover:underline`}
         >
           {commit.slice(0, 8)}
-        </a>{" "}
-        .
+        </a>.
       </p>
       <p class={tw`mt-4`}>
         <Ratio passed={passed} total={total} />
@@ -170,7 +169,7 @@ function TestCaseTile(props: { case: TestCase }) {
   );
 }
 
-function Ratio(props: { passed: number; total: number }) {
+export function Ratio(props: { passed: number; total: number }) {
   const { passed, total } = props;
   const none = passed === 0 && total === 0;
   const percentPassed = none ? 0 : passed / total * 100;
@@ -178,7 +177,7 @@ function Ratio(props: { passed: number; total: number }) {
     <>
       <span class={tw`font-bold`}>{none ? "no" : `${passed} / ${total}`}</span>
       {" "}
-      tests pass ({percentPassed.toFixed(1)}%) {none && "(suite crashed)"}
+      test cases pass ({percentPassed.toFixed(1)}%) {none && "(suite crashed)"}
       <div class={tw`flex`}>
         <div
           class={tw`h-1 mt-1 w-full bg-green-300`}

@@ -16,7 +16,11 @@ export const handler = router({
   "/": async () => {
     const latest = await fetch("https://dl.deno.land/wpt-latest.txt")
       .then((r) => r.text()).then((t) => t.trim());
-    const body = render("Deno WPT Compat", () => <Home latest={latest} />);
+    const latestTests = await wptDataForCommit(latest);
+    const body = render(
+      "Deno WPT Compat",
+      () => <Home latest={latest} latestTests={latestTests} />,
+    );
     return new Response(body, {
       headers: {
         "content-type": "text/html",
