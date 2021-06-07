@@ -28,7 +28,7 @@ export const handler = router({
     if (commit == "favicon.ico") {
       return new Response("not found", { status: 404 });
     }
-    const filter = "/" + (params.filter as unknown as string[] ?? []).join("/") + "/";
+    const filter = Array.isArray(params.filter) ? `/${params.filter.join("/")}/` : "/";
 
     const tests = await wptDataForCommit(commit);
     const filtered = tests.filter((test) => test.file.startsWith(filter));
