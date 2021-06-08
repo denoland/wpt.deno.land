@@ -65,6 +65,23 @@ export function Data(
       <Header />
       <p class={tw`mt-8`}>{filter}</p>
       <p class={tw`mt-4`}>
+        {filter.endsWith('.html') ? (
+	  <a
+	    class={tw`text-blue-500 hover:underline`}
+	    href={`https://github.com/denoland/wpt/blob/master${filter.replace(/\.html$/, ".js")}`}
+	  >
+	    View on GitHub
+	  </a>
+        ) : (
+	  <a
+	    class={tw`text-blue-500 hover:underline`}
+	    href={`https://github.com/denoland/wpt/tree/master${filter}`}
+	  >
+	    View on GitHub
+	  </a>
+	)}
+      </p>
+      <p class={tw`mt-4`}>
         <span class={tw`font-bold`}>{filtered.length}</span>{" "}
         matching WPT tests for commit{" "}
         <a
