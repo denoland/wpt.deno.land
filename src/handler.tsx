@@ -12,8 +12,8 @@ import { Data } from "./Data.tsx";
 import { wptDataForCommit } from "./data.ts";
 import { Home } from "./Home.tsx";
 
-const RELEASE_NAME = "v1.11.0";
-const RELEASE_COMMIT = "b98293e21cb7e55def8fea2ca015381150d4cebf";
+const RELEASE_NAME = "v1.11.2";
+const RELEASE_COMMIT = "2c0e482221cd86fdbdc055c76f1c214200419946";
 
 export const handler = router({
   "/": async () => {
