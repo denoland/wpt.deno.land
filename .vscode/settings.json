@@ -2,8 +2,10 @@
   "deno.enable": true,
   "deno.lint": true,
   "deno.unstable": true,
-  "deno.config": "./tsconfig.json",
   "editor.quickSuggestions": {
     "strings": true
+  },
+  "deno.suggest.imports.hosts": {
+    "https://deno.land": true
   }
 }
